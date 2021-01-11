@@ -48,9 +48,10 @@ module.exports = {
     ],
     '@typescript-eslint/no-unused-vars': 0,
     'unused-imports/no-unused-imports-ts': 0,
+    '@typescript-eslint/no-unused-vars-experimental': 0,
     'unused-imports/no-unused-vars-ts': [
       0,
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }
+      { vars: 'all', varsIgnorePattern: '[I]\\w+', args: 'after-used', argsIgnorePattern: '^_' }
     ]
   },
   overrides: [
@@ -59,7 +60,7 @@ module.exports = {
       excludedFiles: 'stores',
       rules: {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': 0,
         '@typescript-eslint/no-explicit-any': 'warn',
         '@typescript-eslint/no-inferrable-types': 'off'
       }
