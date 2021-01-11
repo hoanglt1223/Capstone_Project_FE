@@ -18,7 +18,7 @@ const LoginForm = () => {
     console.log(response)
   }
   const methods = useForm<Login>({
-    defaultValues: {},
+    defaultValues: {}
   })
   const { register, handleSubmit } = methods
   return (
@@ -42,7 +42,7 @@ const LoginForm = () => {
           <Button type="submit" className="button" outline>
             Login
           </Button>
-          <a href="/signUp" style={{alignSelf: 'center'}}>
+          <a href="/signUp" style={{ alignSelf: 'center' }}>
             <Button type="button" className="button" outline>
               Sign Up
             </Button>

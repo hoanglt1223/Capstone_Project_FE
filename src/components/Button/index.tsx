@@ -6,7 +6,6 @@ import styles from './button.module.scss'
 import Icon from '../Icon'
 
 interface IButtonProps {
-  style?: string
   children?: React.ReactChildren | React.ReactNode
   type?: 'submit' | 'reset' | 'button'
   iconName?: string
@@ -20,8 +19,8 @@ interface IButtonProps {
   variant?: string
 }
 const Button = (props: IButtonProps) => {
-  const { style, children, iconName, onClick, spaceLeft, isLoading, disabled, ...rest } = props
-  let content:React.ReactChildren | React.ReactNode
+  const { children, iconName, onClick, spaceLeft, isLoading, disabled, ...rest } = props
+  let content: React.ReactChildren | React.ReactNode
   if (isLoading) {
     content = <PulseLoader size={10} margin={0} color="#FFFFFF" />
   } else {
@@ -34,8 +33,7 @@ const Button = (props: IButtonProps) => {
   return (
     <ReactStrapButton
       {...rest}
-      className={cx({
-        [styles.button]: true,
+      className={cx(styles.button, {
         [styles.spaceLeft]: spaceLeft,
         [styles.hasIcon]: iconName,
         [styles.disabled]: disabled

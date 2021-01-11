@@ -1,13 +1,12 @@
-import React from "react";
-import ChooseProjectPage from "../../components/ChooseProjectPage";
+import React from 'react'
+import ChooseProjectPage from '../../components/ChooseProjectPage'
 
 const ChooseProject = () => {
-  
   return (
     <div>
-      <ChooseProjectPage/>
+      <ChooseProjectPage />
     </div>
-  );
-};
+  )
+}
 
 export default ChooseProject

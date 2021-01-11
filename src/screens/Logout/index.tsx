@@ -1,13 +1,12 @@
-import React from "react";
-import Logout from "../../components/Logout";
+import React from 'react'
+import LogOutPage from '../../components/Logout'
 
 const LogOut = () => {
-  
   return (
     <div>
-      <Logout/>
+      <LogOutPage />
     </div>
-  );
-};
+  )
+}
 
 export default LogOut

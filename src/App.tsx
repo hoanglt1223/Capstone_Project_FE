@@ -4,9 +4,9 @@ import Login from './screens/Login'
 import React from 'react'
 import routes from './routes'
 import initializeStore from './stores/rootStore'
-import SignUp from "./screens/SignUp";
-import LogOut from "./screens/Logout"
-import ChooseProject from "./screens/chooseProject";
+import SignUp from './screens/SignUp'
+import ChooseProject from './screens/ChooseProject'
+import Logout from './screens/Logout'
 
 const App = () => (
   <Provider {...initializeStore()}>
@@ -16,11 +16,10 @@ const App = () => (
     </head>
     <BrowserRouter>
       <div>
-        <Route path={routes.value} exact component={ Login } />
-        <Route path={routes.login.value} component={ Login } />
-        <Route path={routes.signUp.value} component={ SignUp } />
-        <Route path={routes.logout.value} component={ LogOUt } />
-        <Route path={routes.chooseProject.value} component={ ChooseProject } />
+        <Route path={routes.value} exact component={Login} />
+        <Route path={routes.signUp.value} component={SignUp} />
+        <Route path={routes.logout.value} component={Logout} />
+        <Route path={routes.chooseProject.value} component={ChooseProject} />
       </div>
     </BrowserRouter>
   </Provider>

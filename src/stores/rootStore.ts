@@ -8,7 +8,7 @@ let store: {
   UserStore: UserStore
 } | null = null
 
-export default function initializeStore(this: any) {
+export default function initializeStore(this: unknown) {
   if (isServer) {
     return {
       ProjectStore: new ProjectStore(this),

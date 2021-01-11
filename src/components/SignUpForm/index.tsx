@@ -17,7 +17,7 @@ const SignUpForm = () => {
     console.log(response)
   }
   const methods = useForm<SignUp>({
-    defaultValues: {},
+    defaultValues: {}
   })
   const { register, handleSubmit } = methods
   return (
@@ -39,16 +39,16 @@ const SignUpForm = () => {
             <Label>Password</Label>
             <Input name="re-password" type="password" placeholder="confirm your Password" innerRef={register} />
           </FormGroup>
-            <div className={styles.buttonContainer}>
-              <a href="/login" style={{alignSelf: 'center'}}>
-                <Button type="button" outline>
-                  Back
-                </Button>
-              </a>
-              <Button type="submit" outline>
-                Sign Up
+          <div className={styles.buttonContainer}>
+            <a href="/login" style={{ alignSelf: 'center' }}>
+              <Button type="button" outline>
+                Back
               </Button>
-            </div>
+            </a>
+            <Button type="submit" outline>
+              Sign Up
+            </Button>
+          </div>
         </Form>
       </FormProvider>
     </section>

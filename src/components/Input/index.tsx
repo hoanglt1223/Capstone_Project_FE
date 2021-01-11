@@ -1,8 +1,8 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent } from 'react'
 import cx from 'classnames'
 import styles from './input.module.scss'
 import { Input as InputReactStrap } from 'reactstrap'
-import { InputType } from './constant';
+import { InputType } from './constant'
 interface IInputProps {
   id?: string
   className?: string

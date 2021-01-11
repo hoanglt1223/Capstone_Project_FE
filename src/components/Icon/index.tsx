@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import styles from './icon.module.scss'
-import React from 'react';
+import React from 'react'
 interface IIconProps {
   iconName?: string
   alt?: string

@@ -8,13 +8,7 @@ interface IContainerProps {
 
 const Container = (props: IContainerProps) => {
   const { children } = props
-  return (
-    <div
-      className={cx(styles.container)}
-    >
-      {children}
-    </div>
-  )
+  return <div className={cx(styles.container)}>{children}</div>
 }
 
 export default Container

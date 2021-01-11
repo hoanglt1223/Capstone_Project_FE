@@ -6,7 +6,7 @@ const routes = {
   signUp: {
     value: '/signUp'
   },
-  logout:{
+  logout: {
     value: '/logout'
   },
   chooseProject: {
