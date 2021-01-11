@@ -5,6 +5,9 @@ const routes = {
   },
   signUp: {
     value: '/signUp'
+  },
+  logout:{
+    value: '/logout'
   }
 }
 

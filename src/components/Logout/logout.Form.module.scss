@@ -1,0 +1,46 @@
+.Main{
+    position: relative;
+}
+.container {
+    position: absolute;
+    background-color:#C4C4C4;
+    width: 800px;
+    height: 500px;
+    margin-left: 550px;
+    margin-top: 200px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.titleEnd {
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 130px;
+}
+.buttonContainer{
+    position: relative;
+    padding: 5%;
+    margin-top: 100px;
+    top: 250px;
+    left: 150px;
+    button {
+      width: 200px;
+      margin-right: 40px;
+      background-color: #00A69A;
+      color:#FFFFFF;
+      .left{
+          position: absolute;
+          top: 400px;
+      }
+      
+    }
+    
+    
+  }
+.close {
+      position: absolute;
+      top: 10px;
+      
+  }

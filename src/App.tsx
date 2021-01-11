@@ -5,6 +5,7 @@ import React from 'react'
 import routes from "routes";
 import initializeStore from './stores/rootStore'
 import SignUp from "screens/SignUp";
+import LogOUt from "screens/Logout"
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <Route path={routes.value} exact component={ Login } />
         <Route path={routes.login.value} component={ Login } />
         <Route path={routes.signUp.value} component={ SignUp } />
+        <Route path={routes.logout.value} component={ LogOUt } />
       </div>
     </BrowserRouter>
   </Provider>
