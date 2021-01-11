@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import styles from './signUpForm.module.scss'
 import { Form, FormGroup, Label } from 'reactstrap'
 import Button from '../Button'
-import useStores from 'utils/useStore'
-import Input from '../Input';
+import useStores from '../../utils/useStore'
+import Input from '../Input'
 type SignUp = {
-  username: string,
-  password: string,
-};
+  username: string
+  password: string
+}
 
 const SignUpForm = () => {
   const { UserStore } = useStores()
@@ -17,7 +17,7 @@ const SignUpForm = () => {
     console.log(response)
   }
   const methods = useForm<SignUp>({
-    defaultValues: {}
+    defaultValues: {},
   })
   const { register, handleSubmit } = methods
   return (
@@ -39,21 +39,20 @@ const SignUpForm = () => {
             <Label>Password</Label>
             <Input name="re-password" type="password" placeholder="confirm your Password" innerRef={register} />
           </FormGroup>
-          <div className={styles.buttonContainer}>
-            <a href="/login">
-              <Button color="variant" type="button">
-                Back
+            <div className={styles.buttonContainer}>
+              <a href="/login" style={{alignSelf: 'center'}}>
+                <Button type="button" outline>
+                  Back
+                </Button>
+              </a>
+              <Button type="submit" outline>
+                Sign Up
               </Button>
-            </a>
-            <Button color="primary" type="submit">
-              Sign Up
-            </Button>
-          </div>
+            </div>
         </Form>
       </FormProvider>
     </section>
-  );
-};
+  )
+}
 
 export default SignUpForm
-

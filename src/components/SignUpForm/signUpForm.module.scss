@@ -7,30 +7,40 @@
   padding-top: 40px;
 }
 .loginForm {
-  width: 335px;
-  height: 420px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
+  width: 690px;
+  height: 950px;
+  background-color: #ebf7f8;
+  padding: 60px 80px 60px 80px;
+  border-radius: 100px;
   border: 1px solid #ced4da;
-  font-weight: 500;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
 }
 .title {
   border-bottom: 1px solid #ced4da;
   margin-bottom: 15px;
   height: 50px;
+  size: 36px;
+  align-self: center;
 }
-.buttonContainer{
-  display: flex;
-  justify-content: space-around;
-  border-top: 1px solid #ced4da;
-  padding: 5%;
-  margin-top: 20px;
-  button {
-      width: 100px;
-  }
-}
-.inputCheckbox{
+
+.inputCheckbox {
   position: relative !important;
   margin-left: 0 !important;
+}
+.button {
+  border: 1px solid #232121;
+  box-sizing: border-box;
+  border-radius: 30px;
+  color: #0f0f0f;
+}
+button {
+  width: 210px !important;
+  align-self: center;
+  margin-top: 10px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
 }

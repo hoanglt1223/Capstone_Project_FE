@@ -1,17 +1,17 @@
 import { observable, action } from 'mobx'
-import { login } from 'API/authenticate'
+import { login } from '../API/authenticate'
 import {IUser} from '../interfaces/user'
 
 import { makeAutoObservable } from "mobx"
 class UserStore {
   rootStore: unknown
 
-  constructor(rootStore) {
+  constructor(rootStore: unknown) {
     this.rootStore = rootStore
     makeAutoObservable(this)
   }
 
-  @observable count:number = 0
+  @observable count: number = 0
   increaseIt() {
     this.count += 1
     console.log("TCL ~ file: userStore.ts ~ line 17 ~ UserStore ~ increaseIt ~ this.count", this.count)
@@ -24,7 +24,7 @@ class UserStore {
   }
 
   @action
-  public async login(values) {
+  public async login(values: any) {
     const response = await login(values)
     if (response) {
       console.log(response)

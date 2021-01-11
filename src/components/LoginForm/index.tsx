@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import styles from './loginForm.module.scss'
 import { Form, FormGroup, Label } from 'reactstrap'
 import Button from '../Button'
-import useStores from 'utils/useStore'
-import Input from '../Input';
-import { observer } from "mobx-react";
+import useStores from '../../utils/useStore'
+import Input from '../Input'
+import { observer } from 'mobx-react'
 type Login = {
-  username: string,
-  password: string,
-};
+  username: string
+  password: string
+}
 
 const LoginForm = () => {
   const { UserStore } = useStores()
@@ -18,7 +18,7 @@ const LoginForm = () => {
     console.log(response)
   }
   const methods = useForm<Login>({
-    defaultValues: {}
+    defaultValues: {},
   })
   const { register, handleSubmit } = methods
   return (
@@ -29,30 +29,28 @@ const LoginForm = () => {
             <h4>Login</h4>
           </div>
           <FormGroup controlId="formBasicEmail">
-            <Label>Email</Label>
-            <Input name="email" type="email" placeholder="Email" innerRef={register} />
+            <Label>Username:</Label>
+            <Input name="email" type="email" placeholder="Input your username" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
-            <Label>Password</Label>
-            <Input name="password" type="password" placeholder="Password" innerRef={register} />
+            <Label>Password:</Label>
+            <Input name="password" type="password" placeholder="Input your password" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicCheckbox">
-            <Input className={styles.inputCheckbox} name="remember" type="checkbox" />{' '}
-              Remember me in 30 days
+            <Input className={styles.inputCheckbox} name="remember" type="checkbox" /> Remember me
           </FormGroup>
-          <div className={styles.buttonContainer}>
-            <Button color="primary" type="submit">
-              Login
+          <Button type="submit" className="button" outline>
+            Login
+          </Button>
+          <a href="/signUp" style={{alignSelf: 'center'}}>
+            <Button type="button" className="button" outline>
+              Sign Up
             </Button>
-            <Button color="primary" type="button" onClick={() => UserStore.increase()}>
-              SignUp
-            </Button>
-          </div>
+          </a>
         </Form>
       </FormProvider>
     </section>
-  );
-};
+  )
+}
 
 export default observer(LoginForm)
-
