@@ -1,0 +1,37 @@
+.input {
+  font-style: normal;
+}
+.container {
+  justify-content: center;
+  display: flex;
+  padding-top: 40px;
+}
+.loginForm {
+  width: 335px;
+  height: 380px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  font-weight: 500;
+}
+.title {
+  border-bottom: 1px solid #ced4da;
+  margin-bottom: 15px;
+  height: 50px;
+}
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ced4da;
+  padding: 5%;
+  margin-top: 20px;
+  button {
+    width: 100px;
+    margin-right: 40px;
+  }
+}
+.inputCheckbox{
+  position: relative !important;
+  margin-left: 0 !important;
+}
