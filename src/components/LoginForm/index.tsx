@@ -23,7 +23,6 @@ const LoginForm = () => {
   const { register, handleSubmit } = methods
   return (
     <section className={styles.container}>
-    <div>{UserStore.count}</div>
       <FormProvider {...methods}>
         <Form className={styles.loginForm} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.title}>

@@ -8,6 +8,9 @@ const routes = {
   },
   logout:{
     value: '/logout'
+  },
+  chooseProject: {
+    value: '/choose-project'
   }
 }
 

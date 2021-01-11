@@ -27,19 +27,24 @@ const SignUpForm = () => {
           <div className={styles.title}>
             <h4>Sign Up</h4>
           </div>
-          <FormGroup controlId="formBasicEmail">
-            <Label>Email</Label>
-            <Input name="email" type="email" placeholder="Email" innerRef={register} />
+          <FormGroup controlId="formBasicUsername">
+            <Label>Username</Label>
+            <Input name="email" type="text" placeholder="Input your username" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
             <Label>Password</Label>
-            <Input name="password" type="password" placeholder="Password" innerRef={register} />
+            <Input name="password" type="password" placeholder="Input your password" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
             <Label>Password</Label>
-            <Input name="re-password" type="password" placeholder="Confirm-Password" innerRef={register} />
+            <Input name="re-password" type="password" placeholder="confirm your Password" innerRef={register} />
           </FormGroup>
           <div className={styles.buttonContainer}>
+            <a href="/login">
+              <Button color="variant" type="button">
+                Back
+              </Button>
+            </a>
             <Button color="primary" type="submit">
               Sign Up
             </Button>

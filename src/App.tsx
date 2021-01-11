@@ -6,6 +6,7 @@ import routes from "routes";
 import initializeStore from './stores/rootStore'
 import SignUp from "screens/SignUp";
 import LogOUt from "screens/Logout"
+import ChooseProject from "screens/chooseProject";
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
         <Route path={routes.login.value} component={ Login } />
         <Route path={routes.signUp.value} component={ SignUp } />
         <Route path={routes.logout.value} component={ LogOUt } />
+        <Route path={routes.chooseProject.value} component={ ChooseProject } />
       </div>
     </BrowserRouter>
   </Provider>
