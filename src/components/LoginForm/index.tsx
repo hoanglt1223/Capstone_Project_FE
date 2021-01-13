@@ -39,9 +39,11 @@ const LoginForm = () => {
           <FormGroup controlId="formBasicCheckbox">
             <Input className={styles.inputCheckbox} name="remember" type="checkbox" /> Remember me
           </FormGroup>
-          <Button type="submit" className="button" outline>
-            Login
-          </Button>
+          <a href="/main" style={{ alignSelf: 'center' }}>
+            <Button type="button" className="button" outline>
+              Login
+            </Button>
+          </a>
           <a href="/signUp" style={{ alignSelf: 'center' }}>
             <Button type="button" className="button" outline>
               Sign Up
