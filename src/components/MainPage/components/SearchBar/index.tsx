@@ -1,14 +1,11 @@
 import React from 'react'
 import styles from './searchBar.module.scss'
+import Input from '../../../Input'
 
 const SearchBar = () => {
   return (
     <div className={styles.container}>
-      <input className={styles.inputSearch} type="text" placeholder="Enter what you want to search"></input>
-      <div className={styles.containerScreen}>
-        <button className={styles.buttonScreen1}>Sign Up</button>
-        <button className={styles.buttonScreen1}>Sign In</button>
-      </div>
+      <Input className={styles.inputSearch} type="text" placeholder="Enter what you want to search"></Input>
     </div>
   )
 }

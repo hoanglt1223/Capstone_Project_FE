@@ -1,37 +1,6 @@
-.container{
-    border-style: none !important;
-}
-input{
+.inputSearch{
+    border-color: aliceblue;
     border-style: solid !important;
-    background-position: 10px 12px !important;
-    background-repeat: no-repeat;
-    width: 100%;
     width: 14%;
     margin: 0;
-    border: radius 5px;;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    -ms-border-radius:5px;
-    -o-border-radius:5px;
-    border-color: #ffffff !important;
-}
-
-.containerScreen{
-    position:absolute !important;
-    top: -10px;
-    left: 390px;
-    padding-top: 23px;
-    border-style: none !important;
-    button{
-        background-color:transparent !important;
-        width: 100px!important;
-        border-color: #ffffff;
-        border-radius:    6px;
-        -webkit-border-radius:    6px;
-        -moz-border-radius:    6px;
-        -ms-border-radius:    6px;
-        -o-border-radius:    6px;
-        border-bottom: none;
-        color: #ffffff
-}
 }
