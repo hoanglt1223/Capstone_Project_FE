@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const url = require('url')
 const { BrowserWindow } = require('electron')
 
 let mainWindow = null
 
- function createWindow() {
+function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1024,
-    height: 768,
+    width: 1600,
+    height: 900,
     show: false
   })
 
- mainWindow.loadURL(
+  mainWindow.loadURL(
     process.env.NODE_ENV === 'development'
       ? url.format('http://localhost:3000')
       : url.format({
@@ -26,7 +27,7 @@ let mainWindow = null
       .then(() => {
         console.log('Installed devtools successfully.')
       })
-      .catch(err=>console.log(err))
+      .catch(err => console.log(err))
   }
 
   mainWindow.once('ready-to-show', () => {
