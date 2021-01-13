@@ -2,8 +2,12 @@ import styles from './mainPage.module.scss'
 import SearchBar from './components/SearchBar'
 import ToolsBar from './components/ToolBars'
 import React from 'react'
-import CssPropsField from './components/cssPropsField'
-import GlobalPropsField from './components/globalPropsField'
+import CssProps from './components/CssProps'
+import GlobalProps from './components/GlobalProps'
+import LoginForm from '../LoginForm'
+import Advertisement from './components/Advertisement'
+import PublishGroup from './components/PublishGroup'
+import ComponentsField from '../ComponentsField'
 const MainPage = () => {
   return (
     <div className={styles.container}>
@@ -14,16 +18,29 @@ const MainPage = () => {
         <SearchBar></SearchBar>
       </div>
       <div className={styles.componentCssProps} id="ComponentCssProps">
-        <CssPropsField />
+        <CssProps />
       </div>
       <div className={styles.globalProps} id="GlobalProps">
-        <GlobalPropsField />
+        <GlobalProps />
       </div>
       <div className={styles.adsContainer} id="AdsContainer"></div>
       <div className={styles.publishGroup} id="PublishGroup"></div>
+      <div className={styles.playGround} id="PlayGround">
+        <LoginForm />
+      </div>
+      <div className={styles.adsContainer} id="AdsContainer">
+        <Advertisement />
+      </div>
+      <div className={styles.publishGroup} id="PublishGroup">
+        <PublishGroup />
+      </div>
       <div className={styles.playGround} id="PlayGround"></div>
-      <div className={styles.sourceTree} id="SourceTree"></div>
-      <div className={styles.library} id="Library"></div>
+      <div className={styles.sourceTree} id="SourceTree">
+        <img src="sourcetree.png" />
+      </div>
+      <div className={styles.library} id="Library">
+        <ComponentsField />
+      </div>
     </div>
   )
 }
