@@ -1,0 +1,25 @@
+.container{
+    display:flex;
+    justify-content: flex-start;
+    padding-left: 250px;
+    background-color: #171822;
+    border-style: none !important;
+}
+.container > *{
+    margin:30px;
+    background-color: rgb(201, 169, 169);
+    width:15px !important;
+    border:0px;
+}
+Button:last-of-type{
+    background-color:rgb(233, 114, 114) !important;
+    position: absolute;
+    right: 20px;
+}
+.text{
+    background-color:transparent !important;
+    color:#ffffff;
+    position: absolute;
+    left: -15px;
+    
+}

@@ -7,8 +7,8 @@ body,
 
 .container {
   display: grid;
-  height: 768px;
-  width: 1024px;
+  height: 2000px;
+  width: 1900px;
   grid-template-columns: 15% 10% repeat(2, 15%) 25% 20%;
   grid-template-rows: repeat(2, 5%) repeat(2, 25%) repeat(2, 20%);
   // gap: 0px 0px;
@@ -21,10 +21,13 @@ body,
     'Library SourceTree PlayGround PlayGround PlayGround PublishGroup';
   .header {
     grid-area: Header;
+    
   }
 
   .navbar {
     grid-area: Navbar;
+    background-color: #2E2F3A;
+    padding:10px;
   }
 
   .componentCssProps {
@@ -66,4 +69,11 @@ body,
   position: absolute;
   top: 0;
   left: 0;
+}
+.navbar > *{
+  border:0px;
+  background-position: 10px 20px;
+  background-repeat: no-repeat;
+  width: 15%;
+  
 }
