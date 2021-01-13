@@ -35,7 +35,9 @@ const MainPage = () => {
         <PublishGroup />
       </div>
       <div className={styles.playGround} id="PlayGround"></div>
-      <div className={styles.sourceTree} id="SourceTree"></div>
+      <div className={styles.sourceTree} id="SourceTree">
+        <img src="sourcetree.png" />
+      </div>
       <div className={styles.library} id="Library">
         <ComponentsField />
       </div>

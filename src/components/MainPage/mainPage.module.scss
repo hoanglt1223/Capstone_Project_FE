@@ -10,7 +10,7 @@ body,
   height: 900px;
   width: 1600px;
   outline: 1px solid black;
-  grid-template-columns: 15% 10% repeat(2, 15%) 25% 20%;
+  grid-template-columns: 15% 11.5% repeat(2, 15%) 25% 20%;
   grid-template-rows: 5% 7% repeat(2, 24%) 25% 15%;
   grid-template-areas:
     'Header Header Header Header Header Header'
