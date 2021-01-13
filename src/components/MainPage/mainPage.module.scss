@@ -7,11 +7,10 @@ body,
 
 .container {
   display: grid;
-  height: 2000px;
-  width: 1900px;
+  height: 900px;
+  width: 1600px;
   grid-template-columns: 15% 10% repeat(2, 15%) 25% 20%;
-  grid-template-rows: repeat(2, 5%) repeat(2, 25%) repeat(2, 20%);
-  // gap: 0px 0px;
+  grid-template-rows: 5% 7% repeat(2, 24%) repeat(2, 20%);
   grid-template-areas:
     'Header Header Header Header Header Header'
     'Navbar Navbar Navbar Navbar Navbar Navbar'
@@ -64,16 +63,9 @@ body,
   position: relative;
 }
 
-.container *:after {
-  content: attr(id);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.navbar > *{
-  border:0px;
-  background-position: 10px 20px;
-  background-repeat: no-repeat;
-  width: 15%;
-  
-}
+// .container *:after {
+//   content: attr(id);
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }

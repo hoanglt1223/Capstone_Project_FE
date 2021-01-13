@@ -25,7 +25,7 @@ const ToolsBar = () => {
       <Button className={styles.buttonExport} type="submit">
         Export
       </Button>
-      <h1 className={styles.text}>KIXBUILDER</h1>
+      <h2 className={styles.text}>KIXBUILDER</h2>
     </div>
   )
 }
