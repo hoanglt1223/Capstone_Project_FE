@@ -4,7 +4,7 @@ import ToolsBar from './components/ToolBars'
 import React from 'react'
 import CssProps from './components/CssProps'
 import GlobalProps from './components/GlobalProps'
-import SignUpForm from '../SignUpForm'
+import LoginForm from '../LoginForm'
 import Advertisement from './components/Advertisement'
 import PublishGroup from './components/PublishGroup'
 import ComponentsField from '../ComponentsField'
@@ -26,7 +26,7 @@ const MainPage = () => {
       <div className={styles.adsContainer} id="AdsContainer"></div>
       <div className={styles.publishGroup} id="PublishGroup"></div>
       <div className={styles.playGround} id="PlayGround">
-        <SignUpForm />
+        <LoginForm />
       </div>
       <div className={styles.adsContainer} id="AdsContainer">
         <Advertisement />
