@@ -7,6 +7,7 @@ import GlobalProps from './components/GlobalProps'
 import SignUpForm from '../SignUpForm'
 import Advertisement from './components/Advertisement'
 import PublishGroup from './components/PublishGroup'
+import ComponentsField from '../ComponentsField'
 const MainPage = () => {
   return (
     <div className={styles.container}>
@@ -35,7 +36,9 @@ const MainPage = () => {
       </div>
       <div className={styles.playGround} id="PlayGround"></div>
       <div className={styles.sourceTree} id="SourceTree"></div>
-      <div className={styles.library} id="Library"></div>
+      <div className={styles.library} id="Library">
+        <ComponentsField />
+      </div>
     </div>
   )
 }
