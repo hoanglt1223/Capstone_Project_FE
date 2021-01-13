@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './cssProps.module.scss'
 
 const mockCSSProps = [
@@ -12,18 +13,19 @@ const mockCSSProps = [
   {
     name: 'Width',
     value: '30px'
-  },
+  }
 ]
 const CssPropsField = () => {
   return (
     <div className={styles.container}>
-      {Array.isArray(mockCSSProps) && mockCSSProps.map(props => {
-        return (
-          <div>
-            {props.name} : {props.value}
-          </div>
-        )
-      })}
+      {Array.isArray(mockCSSProps) &&
+        mockCSSProps.map(cssProps => {
+          return (
+            <div key={cssProps.name}>
+              {cssProps.name} : {cssProps.value}
+            </div>
+          )
+        })}
     </div>
   )
 }

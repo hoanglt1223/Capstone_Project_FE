@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './cssProps.module.scss'
 
 const mockGlobalProps = [
@@ -13,13 +14,14 @@ const mockGlobalProps = [
 const GlobalPropsField = () => {
   return (
     <div className={styles.container}>
-      {Array.isArray(mockGlobalProps) && mockGlobalProps.map(props => {
-        return (
-          <div>
-            {props.name} : {props.value}
-          </div>
-        )
-      })}
+      {Array.isArray(mockGlobalProps) &&
+        mockGlobalProps.map(globalProps => {
+          return (
+            <div key={globalProps.name}>
+              {globalProps.name} : {globalProps.value}
+            </div>
+          )
+        })}
     </div>
   )
 }
