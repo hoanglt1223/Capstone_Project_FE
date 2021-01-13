@@ -1,5 +1,5 @@
 import React from 'react'
-import ChooseProjectPage from '../../components/ChooseProjectPage'
+import ChooseProjectPage from '../../components/ChooseProject'
 
 const ChooseProject = () => {
   return (
