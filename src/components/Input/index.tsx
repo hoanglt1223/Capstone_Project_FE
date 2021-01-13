@@ -13,7 +13,6 @@ interface IInputProps {
   checked?: boolean
   disabled?: boolean
   defaultChecked?: boolean
-  prepend?: React.ReactElement | string
   innerRef?: React.Ref<HTMLInputElement | HTMLTextAreaElement>
   onChange?: (event: unknown) => void
   onInput?: (event: FormEvent) => void
@@ -30,18 +29,15 @@ const Input = (props: IInputProps) => {
     checked,
     disabled,
     defaultChecked,
-    prepend,
     onChange,
     onInput
   } = props
   return (
     <>
-      <span className={styles.prepend}>{prepend}</span>
       <InputReactStrap
         disabled={disabled}
         className={cx(styles.input, className, {
-          [styles.disabled]: disabled,
-          [styles.hasPrepend]: prepend
+          [styles.disabled]: disabled
         })}
         value={value}
         name={name}

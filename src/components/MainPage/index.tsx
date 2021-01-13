@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import styles from './mainPage.module.scss'
-import SearchBar from './ComponentsMainPage/searchBar'
+import SearchBar from './ComponentsMainPage/SearchBar'
 import ToolsBar from './ComponentsMainPage/ToolBars'
 const MainPage = () => {
   return (
-    <div className={styles.container} id="Container">
-      <div className={styles.header} id="Header">
+    <div className={styles.container}>
+      <div className={styles.header}>
         <ToolsBar></ToolsBar>
       </div>
-      <div className={styles.navbar} id="Navbar">
+      <div className={styles.navbar}>
         <SearchBar></SearchBar>
       </div>
       <div className={styles.componentCssProps} id="ComponentCssProps"></div>
