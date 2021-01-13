@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { app } = require('electron')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const createWindow = require('./win')
 
 app.on('ready', async () => {

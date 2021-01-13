@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color:#212529;
+  color: white;
+  height: 100%;
+  justify-content: center;
+}
+.buttonContainer {
+  text-align: center;
+  button {
+    background-color: #2E2F3A;
+    width: 95% !important;
+  }
+}

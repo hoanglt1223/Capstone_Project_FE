@@ -15,14 +15,15 @@ const mockCSSProps = [
     value: '30px'
   }
 ]
-const CssPropsField = () => {
+const CssProps = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.title}>CSS Properties</div>
       {Array.isArray(mockCSSProps) &&
         mockCSSProps.map(cssProps => {
           return (
             <div key={cssProps.name}>
-              {cssProps.name} : {cssProps.value}
+              <span className={styles.propsName}>{cssProps.name}</span> : {cssProps.value}
             </div>
           )
         })}
@@ -30,4 +31,4 @@ const CssPropsField = () => {
   )
 }
 
-export default CssPropsField
+export default CssProps

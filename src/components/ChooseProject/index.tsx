@@ -1,7 +1,7 @@
 import React from 'react'
 import { mockDataProject } from './mockData'
 import styles from './chooseProject.module.scss'
-const ChooseProjectPage = () => {
+const ChooseProject = () => {
   function onChooseProject() {
     alert('You choose this project !!')
   }
@@ -31,4 +31,4 @@ const ChooseProjectPage = () => {
   )
 }
 
-export default ChooseProjectPage
+export default ChooseProject
