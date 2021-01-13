@@ -21,13 +21,12 @@ body,
     'Library SourceTree PlayGround PlayGround PlayGround PublishGroup';
   .header {
     grid-area: Header;
-    
   }
 
   .navbar {
     grid-area: Navbar;
-    background-color: #2E2F3A;
-    padding:10px;
+    background-color: #2e2f3a;
+    padding: 10px;
   }
 
   .componentCssProps {
