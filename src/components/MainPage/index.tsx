@@ -4,6 +4,7 @@ import ToolsBar from './components/ToolBars'
 import React from 'react'
 import CssPropsField from './components/cssPropsField'
 import GlobalPropsField from './components/globalPropsField'
+import SignUpForm from '../SignUpForm'
 const MainPage = () => {
   return (
     <div className={styles.container}>
@@ -21,7 +22,9 @@ const MainPage = () => {
       </div>
       <div className={styles.adsContainer} id="AdsContainer"></div>
       <div className={styles.publishGroup} id="PublishGroup"></div>
-      <div className={styles.playGround} id="PlayGround"></div>
+      <div className={styles.playGround} id="PlayGround">
+        <SignUpForm />
+      </div>
       <div className={styles.sourceTree} id="SourceTree"></div>
       <div className={styles.library} id="Library"></div>
     </div>

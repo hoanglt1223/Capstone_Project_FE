@@ -9,6 +9,7 @@ body,
   display: grid;
   height: 900px;
   width: 1600px;
+  outline: 1px solid black;
   grid-template-columns: 15% 10% repeat(2, 15%) 25% 20%;
   grid-template-rows: 5% 7% repeat(2, 24%) repeat(2, 20%);
   grid-template-areas:
@@ -31,18 +32,22 @@ body,
 
   .componentCssProps {
     grid-area: ComponentCssProps;
+    outline: 1px solid black;
   }
 
   .globalProps {
     grid-area: GlobalProps;
+    outline: 1px solid black;
   }
 
   .adsContainer {
     grid-area: AdsContainer;
+    outline: 1px solid black;
   }
 
   .publishGroup {
     grid-area: PublishGroup;
+    outline: 1px solid black;
   }
 
   .playGround {
@@ -51,21 +56,11 @@ body,
 
   .sourceTree {
     grid-area: SourceTree;
+    outline: 1px solid black;
   }
 
   .library {
     grid-area: Library;
+    outline: 1px solid black;
   }
 }
-
-.container * {
-  border: 1px solid rgb(48, 46, 46);
-  position: relative;
-}
-
-// .container *:after {
-//   content: attr(id);
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
