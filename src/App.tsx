@@ -5,9 +5,9 @@ import React from 'react'
 import routes from './routes'
 import initializeStore from './stores/rootStore'
 import SignUp from './screens/SignUp'
-import ChooseProject from './screens/chooseProject'
 import Logout from './screens/Logout'
 import Main from './screens/Main'
+import ChooseProject from './components/ChooseProject'
 
 const App = () => (
   <Provider {...initializeStore()}>

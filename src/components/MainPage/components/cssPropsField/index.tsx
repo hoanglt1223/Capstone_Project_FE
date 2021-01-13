@@ -18,11 +18,12 @@ const mockCSSProps = [
 const CssPropsField = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.title}>CSS Properties</div>
       {Array.isArray(mockCSSProps) &&
         mockCSSProps.map(cssProps => {
           return (
             <div key={cssProps.name}>
-              {cssProps.name} : {cssProps.value}
+              <span className={styles.propsName}>{cssProps.name}</span> : {cssProps.value}
             </div>
           )
         })}

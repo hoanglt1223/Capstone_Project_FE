@@ -5,6 +5,8 @@ import React from 'react'
 import CssPropsField from './components/cssPropsField'
 import GlobalPropsField from './components/globalPropsField'
 import SignUpForm from '../SignUpForm'
+import AdvertisementField from './components/AdvertisementField'
+import PublishGroupField from './components/PublishGroupField'
 const MainPage = () => {
   return (
     <div className={styles.container}>
@@ -25,6 +27,13 @@ const MainPage = () => {
       <div className={styles.playGround} id="PlayGround">
         <SignUpForm />
       </div>
+      <div className={styles.adsContainer} id="AdsContainer">
+        <AdvertisementField />
+      </div>
+      <div className={styles.publishGroup} id="PublishGroup">
+        <PublishGroupField />
+      </div>
+      <div className={styles.playGround} id="PlayGround"></div>
       <div className={styles.sourceTree} id="SourceTree"></div>
       <div className={styles.library} id="Library"></div>
     </div>

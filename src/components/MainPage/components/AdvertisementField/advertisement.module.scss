@@ -1,9 +1,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  background-color: #212529;
+  background-color:#212529;
   color: white;
   height: 100%;
+  div {
+    height: 80%;
+    width: 80%;
+    background-color: #C4C4C4;
+    color: black;
+  }
 }
 .title {
   background-color: #171822;
