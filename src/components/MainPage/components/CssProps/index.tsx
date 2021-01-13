@@ -15,7 +15,7 @@ const mockCSSProps = [
     value: '30px'
   }
 ]
-const CssPropsField = () => {
+const CssProps = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>CSS Properties</div>
@@ -31,4 +31,4 @@ const CssPropsField = () => {
   )
 }
 
-export default CssPropsField
+export default CssProps

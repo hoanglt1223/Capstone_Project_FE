@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './advertisement.module.scss'
 
-const AdvertisementField = () => {
+const Advertisement = () => {
   return (
     <div className={styles.container}>
       <div>Advertisement</div>
@@ -9,4 +9,4 @@ const AdvertisementField = () => {
   )
 }
 
-export default AdvertisementField
+export default Advertisement

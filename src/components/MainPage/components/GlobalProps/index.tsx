@@ -11,7 +11,7 @@ const mockGlobalProps = [
     value: 'false'
   }
 ]
-const GlobalPropsField = () => {
+const GlobalProps = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>Global Properties</div>
@@ -27,4 +27,4 @@ const GlobalPropsField = () => {
   )
 }
 
-export default GlobalPropsField
+export default GlobalProps

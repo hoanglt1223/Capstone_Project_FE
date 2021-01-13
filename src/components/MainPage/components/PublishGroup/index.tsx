@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../../../Button'
 import styles from './publishGroup.module.scss'
 
-const PublishGroupField = () => {
+const PublishGroup = () => {
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
@@ -13,4 +13,4 @@ const PublishGroupField = () => {
   )
 }
 
-export default PublishGroupField
+export default PublishGroup
