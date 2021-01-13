@@ -4,27 +4,27 @@ import Button from '../../../Button'
 const ToolsBar = () => {
   return (
     <div className={styles.container}>
-      <Button className={styles.button} type="submit">
+      <button className={styles.button} type="submit">
         New
-      </Button>
-      <Button className={styles.button} type="submit">
+      </button>
+      <button className={styles.button} type="submit">
         Copy
-      </Button>
-      <Button className={styles.button} type="submit">
+      </button>
+      <button className={styles.button} type="submit">
         Cut
-      </Button>
-      <Button className={styles.button} type="submit">
+      </button>
+      <button className={styles.button} type="submit">
         Delete
-      </Button>
-      <Button className={styles.button} type="submit">
+      </button>
+      <button className={styles.button} type="submit">
         Save
-      </Button>
-      <Button className={styles.button} type="submit">
+      </button>
+      <button className={styles.button} type="submit">
         Paste
-      </Button>
-      <Button className={styles.buttonExport} type="submit">
+      </button>
+      <button className={styles.buttonExport} type="submit">
         Export
-      </Button>
+      </button>
       <h2 className={styles.text}>KIXBUILDER</h2>
     </div>
   )
