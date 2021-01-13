@@ -13,7 +13,7 @@ type SignUp = {
 const SignUpForm = () => {
   const { UserStore } = useStores()
   const onSubmit = async (data: SignUp) => {
-    const response = await UserStore.Login(data)
+    const response = (await UserStore.Login(data)) || ''
     console.log(response)
   }
   const methods = useForm<SignUp>({
@@ -40,7 +40,7 @@ const SignUpForm = () => {
             <Input name="re-password" type="password" placeholder="confirm your Password" innerRef={register} />
           </FormGroup>
           <div className={styles.buttonContainer}>
-            <a href="/login" style={{ alignSelf: 'center' }}>
+            <a href="/" style={{ alignSelf: 'center' }}>
               <Button type="button" outline>
                 Back
               </Button>

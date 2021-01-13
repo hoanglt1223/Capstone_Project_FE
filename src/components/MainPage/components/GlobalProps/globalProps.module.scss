@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color:#212529;
+  color: white;
+  height: 100%;
+}
+.title {
+  background-color: #171822;
+  color: white;
+  height: 50px;
+}
+.propsName {
+  color: #ED7899;
+}
