@@ -1,5 +1,7 @@
 .container{
     border-style: none !important;
+    display: flex;
+    justify-content: space-between !important;
 }
 input{
     border-style: solid !important;
@@ -17,11 +19,10 @@ input{
 }
 
 .containerScreen{
-    position:absolute !important;
-    top: -10px;
-    left: 390px;
-    padding-top: 23px;
     border-style: none !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    
     button{
         background-color:transparent !important;
         width: 100px!important;
@@ -32,6 +33,7 @@ input{
         -ms-border-radius:    6px;
         -o-border-radius:    6px;
         border-bottom: none;
-        color: #ffffff
+        color: #ffffff;
+        
 }
 }

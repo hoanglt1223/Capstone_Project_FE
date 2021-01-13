@@ -1,9 +1,9 @@
 .container {
     display:flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding-left: 250px;
     background-color: #171822;
-    button {
+    button{
         margin: 10px;
         width: 70px !important;
         border-radius: 5px;
@@ -15,11 +15,16 @@
         color: #ffffff;
        
 }
-.buttonExport{
-    background-color:red!important;
-    position:absolute;
-    right: 60px;
+
+.containerButton2{
+    display: flex;
+    justify-content: space-between !important;
+    border-style: none !important;
+    
+    
 } 
+.containerButton1{
+    border-style: none !important;
 }
 
 .text {
@@ -28,4 +33,5 @@
     left: 0px;
     border-style: none !important;
     
+}
 }
