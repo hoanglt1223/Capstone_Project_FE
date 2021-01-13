@@ -11,6 +11,9 @@ const routes = {
   },
   chooseProject: {
     value: '/choose-project'
+  },
+  mainPage: {
+    value: '/main'
   }
 }
 

@@ -1,0 +1,69 @@
+html,
+body,
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  height: 768px;
+  width: 1024px;
+  grid-template-columns: 15% 10% repeat(2, 15%) 25% 20%;
+  grid-template-rows: repeat(2, 5%) repeat(2, 25%) repeat(2, 20%);
+  // gap: 0px 0px;
+  grid-template-areas:
+    'Header Header Header Header Header Header'
+    'Navbar Navbar Navbar Navbar Navbar Navbar'
+    'Library SourceTree PlayGround PlayGround PlayGround ComponentCssProps'
+    'Library SourceTree PlayGround PlayGround PlayGround GlobalProps'
+    'Library SourceTree PlayGround PlayGround PlayGround AdsContainer'
+    'Library SourceTree PlayGround PlayGround PlayGround PublishGroup';
+  .header {
+    grid-area: Header;
+  }
+
+  .navbar {
+    grid-area: Navbar;
+  }
+
+  .componentCssProps {
+    grid-area: ComponentCssProps;
+  }
+
+  .globalProps {
+    grid-area: GlobalProps;
+  }
+
+  .adsContainer {
+    grid-area: AdsContainer;
+  }
+
+  .publishGroup {
+    grid-area: PublishGroup;
+  }
+
+  .playGround {
+    grid-area: PlayGround;
+  }
+
+  .sourceTree {
+    grid-area: SourceTree;
+  }
+
+  .library {
+    grid-area: Library;
+  }
+}
+
+.container * {
+  border: 1px solid rgb(48, 46, 46);
+  position: relative;
+}
+
+.container *:after {
+  content: attr(id);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
