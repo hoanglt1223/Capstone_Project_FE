@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { app } = require('electron')
 const createWindow = require('./win')
 
@@ -10,7 +11,7 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-});
+})
 
 function logVersions() {
   const log = console.log
