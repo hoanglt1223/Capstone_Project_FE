@@ -1,0 +1,11 @@
+.navbar {
+  background-color: #2e2f3a;
+  color: #fef4f4;
+  & .active {
+    background-color: #171822;
+  }
+}
+
+.activeTab {
+  background-color: #171822;
+}

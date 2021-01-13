@@ -13,10 +13,10 @@ const ComponentsField = (props: IComponentsFieldProps) => {
   }
   return (
     <div className={styles.tab}>
-      <Nav tabs fill>
+      <Nav tabs fill className={styles.navbar}>
         <NavItem>
           <NavLink
-            className={cx({ active: activeTab === '1' })}
+            className={cx({ [styles.active]: activeTab === '1' })}
             onClick={() => {
               toggle('1')
             }}
@@ -26,7 +26,7 @@ const ComponentsField = (props: IComponentsFieldProps) => {
         </NavItem>
         <NavItem>
           <NavLink
-            className={cx({ active: activeTab === '2' })}
+            className={cx({ [styles.active]: activeTab === '2' })}
             onClick={() => {
               toggle('2')
             }}
@@ -35,21 +35,21 @@ const ComponentsField = (props: IComponentsFieldProps) => {
           </NavLink>
         </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab}>
+      <TabContent activeTab={activeTab} className={styles.activeTab}>
         <TabPane tabId="1">
           <Row className={styles.tabContent}>
             <Col>
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Input'}
               </Button>
             </Col>
             <Col>
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Form'}
               </Button>
             </Col>
             <Col>
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Button'}
               </Button>
             </Col>
@@ -58,22 +58,22 @@ const ComponentsField = (props: IComponentsFieldProps) => {
         <TabPane tabId="2">
           <Row>
             <Col md="12">
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Component 1'}
               </Button>
             </Col>
             <Col md="12">
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Component 2'}
               </Button>
             </Col>
             <Col md="12">
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Component 3'}
               </Button>
             </Col>
             <Col md="12">
-              <Button outline color="info">
+              <Button outline color="secondary">
                 {'Component 4'}
               </Button>
             </Col>
