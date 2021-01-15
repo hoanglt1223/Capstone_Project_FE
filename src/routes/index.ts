@@ -14,6 +14,9 @@ const routes = {
   },
   mainPage: {
     value: '/main'
+  },
+  about: {
+    value: '/about'
   }
 }
 

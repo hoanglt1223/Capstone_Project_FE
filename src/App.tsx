@@ -7,6 +7,7 @@ import SignUp from './screens/SignUp'
 import Logout from './screens/Logout'
 import Main from './screens/Main'
 import ChooseProject from './components/ChooseProject'
+import AboutPage from './screens/About'
 
 const App = () => (
   <StoreContext.Provider value={store}>
@@ -21,6 +22,7 @@ const App = () => (
         <Route path={routes.logout.value} component={Logout} />
         <Route path={routes.chooseProject.value} component={ChooseProject} />
         <Route path={routes.mainPage.value} component={Main} />
+        <Route path={routes.about.value} component={AboutPage} />
       </div>
     </BrowserRouter>
   </StoreContext.Provider>

@@ -1,0 +1,62 @@
+.container {
+  width: 400px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 500px;
+  border: solid 1px black;
+}
+.avatar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+}
+.description {
+  margin-top: 20px;
+  text-align: center;
+}
+.arrowRight {
+  span {
+    height: 50px;
+    width: 50px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-image: none;
+    &:after
+    {
+      content: '>';
+      font-size: 30px;
+      font-weight: 700;
+      color: black;
+    }
+  }
+  
+}
+.arrowLeft {
+  span {
+    height: 50px;
+    width: 50px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-image: none;
+    &:after {
+      content: '<';
+      font-size: 30px;
+      font-weight: 700;
+      color: black;
+    }
+  }
+  
+}
