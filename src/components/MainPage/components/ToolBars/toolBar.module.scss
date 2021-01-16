@@ -1,14 +1,37 @@
 .container {
     display:flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding-left: 250px;
     background-color: #171822;
-    button {
-        margin: 0;
-    }
+    button{
+        margin: 10px;
+        width: 70px !important;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        background-color: #00a69b;
+        color: #ffffff;
+       
 }
+
+.containerButton2{
+    display: flex;
+    justify-content: space-between !important;
+    border-style: none !important;
+    
+    
+} 
+.containerButton1{
+    border-style: none !important;
+}
+
 .text {
     color:#ffffff;
     position: absolute;
     left: 0px;
+    border-style: none !important;
+    
+}
 }
