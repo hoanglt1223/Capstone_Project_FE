@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import styles from './loginForm.module.scss'
 import { Form, FormGroup, Label } from 'reactstrap'
@@ -6,8 +6,11 @@ import Button from '../Button'
 import useStores from '../../utils/useStore'
 import Input from '../Input'
 import { observer } from 'mobx-react'
+import { getAccessToken } from '../../API'
+import { useHistory } from 'react-router-dom'
+import routes from '../../routes'
 type Login = {
-  username: string
+  email: string
   password: string
 }
 
@@ -20,6 +23,12 @@ const LoginForm = () => {
   const methods = useForm<Login>({
     defaultValues: {}
   })
+  const history = useHistory()
+  useEffect(() => {
+    if (getAccessToken()) {
+      history.push(routes.mainPage.value)
+    }
+  }, [])
   const { register, handleSubmit } = methods
   return (
     <section className={styles.container}>
@@ -29,7 +38,7 @@ const LoginForm = () => {
             <h4>Login</h4>
           </div>
           <FormGroup controlId="formBasicEmail">
-            <Label>Username:</Label>
+            <Label>Email:</Label>
             <Input name="email" type="email" placeholder="Input your username" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
@@ -39,11 +48,9 @@ const LoginForm = () => {
           <FormGroup controlId="formBasicCheckbox">
             <Input className={styles.inputCheckbox} name="remember" type="checkbox" /> Remember me
           </FormGroup>
-          <a href="/main" style={{ alignSelf: 'center' }}>
-            <Button type="button" className="button" outline>
-              Login
-            </Button>
-          </a>
+          <Button type="submit" className="button" outline>
+            Login
+          </Button>
           <a href="/signUp" style={{ alignSelf: 'center' }}>
             <Button type="button" className="button" outline>
               Sign Up
