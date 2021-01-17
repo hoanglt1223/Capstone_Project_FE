@@ -20,7 +20,11 @@ const SignUpForm = () => {
   })
   const { register, handleSubmit, watch, errors } = methods
   const onSubmit = async (userData: SignUp) => {
-    const response = (await UserStore.createUser(userData)) || ''
+    const formattedUser = {
+      username: userData.username,
+      password: userData.password
+    }
+    const response = (await UserStore.createUser(formattedUser)) || ''
     if (response) {
       history.push('/main')
     }
