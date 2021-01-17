@@ -1,19 +1,19 @@
 import React from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
-import styles from './signUpForm.module.scss'
+import { FormProvider, useForm } from 'react-hook-form'
 import { Form, FormGroup, Label } from 'reactstrap'
+import { useStore } from '../../stores/rootStore'
 import Button from '../Button'
-import useStores from '../../utils/useStore'
 import Input from '../Input'
+import styles from './signUpForm.module.scss'
 type SignUp = {
   username: string
   password: string
 }
 
 const SignUpForm = () => {
-  const { UserStore } = useStores()
+  const { userStore } = useStore()
   const onSubmit = async (data: SignUp) => {
-    const response = (await UserStore.Login(data)) || ''
+    const response = (await userStore.login(data)) || ''
     console.log(response)
   }
   const methods = useForm<SignUp>({

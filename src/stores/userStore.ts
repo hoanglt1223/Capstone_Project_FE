@@ -5,13 +5,6 @@ import { makeAutoObservable } from 'mobx'
 import { setAccessToken } from '../API'
 
 class UserStore {
-  rootStore: unknown
-
-  constructor(rootStore: unknown) {
-    this.rootStore = rootStore
-    makeAutoObservable(this)
-  }
-
   @observable count: number = 0
   increaseIt() {
     this.count += 1

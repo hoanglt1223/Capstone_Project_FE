@@ -1,26 +1,16 @@
+import { createContext, useContext } from 'react'
 import ProjectStore from './projectStore'
 import UserStore from './userStore'
 
-const isServer = typeof window === 'undefined'
-
-let store: {
-  ProjectStore: ProjectStore
-  UserStore: UserStore
-} | null = null
-
-export default function initializeStore(this: unknown) {
-  if (isServer) {
-    return {
-      ProjectStore: new ProjectStore(this),
-      UserStore: new UserStore(this)
-    }
-  }
-  if (store === null) {
-    store = {
-      ProjectStore: new ProjectStore(this),
-      UserStore: new UserStore(this)
-    }
-  }
-
-  return store
+export interface IStore {
+  projectStore: ProjectStore
+  userStore: UserStore
+}
+export const store: IStore = {
+  projectStore: new ProjectStore(),
+  userStore: new UserStore()
+}
+export const StoreContext = createContext(store)
+export const useStore = () => {
+  return useContext(StoreContext)
 }

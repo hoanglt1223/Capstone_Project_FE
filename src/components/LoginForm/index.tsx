@@ -3,21 +3,21 @@ import { useForm, FormProvider } from 'react-hook-form'
 import styles from './loginForm.module.scss'
 import { Form, FormGroup, Label } from 'reactstrap'
 import Button from '../Button'
-import useStores from '../../utils/useStore'
 import Input from '../Input'
 import { observer } from 'mobx-react'
 import { getAccessToken } from '../../API'
 import { useHistory } from 'react-router-dom'
 import routes from '../../routes'
+import { useStore } from '../../stores/rootStore'
 type Login = {
   email: string
   password: string
 }
 
 const LoginForm = () => {
-  const { UserStore } = useStores()
+  const { userStore } = useStore()
   const onSubmit = async (data: Login) => {
-    const response = await UserStore.login(data)
+    const response = await userStore.login(data)
     console.log(response)
   }
   const methods = useForm<Login>({
