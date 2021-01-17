@@ -46,6 +46,11 @@ class UserStore {
       statusCode: 201
     }
   }
+  @action
+  public async createUser(values: any) {
+    const response = await createUser(values)
+    return response
+  }
 
   @action
   public increase() {
