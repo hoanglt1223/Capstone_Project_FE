@@ -13,7 +13,7 @@ type SignUp = {
 
 const SignUpForm = () => {
   const history = useHistory()
-  const { UserStore } = useStores()
+  const { UserStore } = useStore()
   const methods = useForm<SignUp>({
     defaultValues: {},
     reValidateMode: 'onChange'
