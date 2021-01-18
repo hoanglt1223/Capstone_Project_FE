@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - develop
+      - '**'
+      - '*'
+      - '!master'
+      - 'feature/**'
 jobs:
   build:
 
