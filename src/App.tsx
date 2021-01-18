@@ -1,18 +1,17 @@
 import { BrowserRouter, Route } from 'react-router-dom'
-import { Provider } from 'mobx-react'
 import Login from './screens/Login'
 import React from 'react'
 import routes from './routes'
-import initializeStore from './stores/rootStore'
+import { store, StoreContext } from './stores/rootStore'
 import SignUp from './screens/SignUp'
 import Logout from './screens/Logout'
 import Main from './screens/Main'
 import ChooseProject from './components/ChooseProject'
 
 const App = () => (
-  <Provider {...initializeStore()}>
+  <StoreContext.Provider value={store}>
     <head>
-      <title>Welcome to set2020</title>
+      <title>Welcome to Set2020</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </head>
     <BrowserRouter>
@@ -24,7 +23,7 @@ const App = () => (
         <Route path={routes.mainPage.value} component={Main} />
       </div>
     </BrowserRouter>
-  </Provider>
+  </StoreContext.Provider>
 )
 
 export default App

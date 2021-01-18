@@ -27,9 +27,9 @@ export function errorHandler(error: IServerError) {
 }
 
 export function getAccessToken(): string {
-  return localStorage.getItem('token') || ''
+  return localStorage.getItem('userToken') || ''
 }
 
 export function setAccessToken(token: string = '') {
-  localStorage.setItem('token', token)
+  localStorage.setItem('userToken', token)
 }
