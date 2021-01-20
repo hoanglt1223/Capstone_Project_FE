@@ -4,6 +4,7 @@ import { Form, FormGroup, Label } from 'reactstrap'
 import { useStore } from '../../stores/rootStore'
 import Button from '../Button'
 import Input from '../Input'
+import styles from './signUpForm.module.scss'
 import { useHistory } from 'react-router-dom'
 type SignUp = {
   username: string
@@ -13,7 +14,7 @@ type SignUp = {
 
 const SignUpForm = () => {
   const history = useHistory()
-  const { UserStore } = useStore()
+  const { userStore } = useStore()
   const methods = useForm<SignUp>({
     defaultValues: {},
     reValidateMode: 'onChange'
@@ -24,10 +25,10 @@ const SignUpForm = () => {
       username: userData.username,
       password: userData.password
     }
-    const response = (await UserStore.createUser(formattedUser)) || ''
-    if (response) {
-      history.push('/main')
-    }
+    // const response = (await userStore.createUser(formattedUser)) || ''
+    // if (response) {
+    //   history.push('/main')
+    // }
   }
   const watchPassword = watch('password')
   return (
