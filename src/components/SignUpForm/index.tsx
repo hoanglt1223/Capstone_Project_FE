@@ -53,8 +53,8 @@ const SignUpForm = () => {
                   message: 'password is required'
                 },
                 minLength: {
-                  value: 6,
-                  message: 'password should contain at least 6 characters'
+                  value: 8,
+                  message: 'password should contain at least 8 characters'
                 }
               })}
             />
@@ -65,15 +65,15 @@ const SignUpForm = () => {
             <Input
               name="password_confirmation"
               type="password"
-              placeholder="confirm your Password"
+              placeholder="Confirm your Password"
               innerRef={register({
                 required: {
                   value: true,
                   message: 'confirm password is required'
                 },
                 minLength: {
-                  value: 6,
-                  message: 'confirm password should contain at least 6 characters'
+                  value: 8,
+                  message: 'confirm password should contain at least 8 characters'
                 }
               })}
             />
