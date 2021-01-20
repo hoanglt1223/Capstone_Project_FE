@@ -1,8 +1,9 @@
 import { observable, action } from 'mobx'
 import { login } from '../API/authenticate'
 import { ErrorMessage, IUser } from '../interfaces/user'
-import { makeAutoObservable } from 'mobx'
 import { setAccessToken } from '../API'
+import { createUser } from '../API/user'
+import { ISignUp } from '../components/SignUpForm'
 
 class UserStore {
   @observable count: number = 0
@@ -46,11 +47,10 @@ class UserStore {
       statusCode: 201
     }
   }
-  // @action
-  // public async createUser(values: any) {
-  //   const response = await this.createUser(values)
-  //   return response
-  // }
+  @action
+  public async signUp(values: ISignUp) {
+    await createUser(values)
+  }
 
   @action
   public increase() {

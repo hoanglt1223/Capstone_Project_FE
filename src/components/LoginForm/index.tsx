@@ -24,11 +24,12 @@ const LoginForm = () => {
     defaultValues: {}
   })
   const history = useHistory()
+  const token = getAccessToken() || ''
   useEffect(() => {
-    if (getAccessToken()) {
+    if (token) {
       history.push(routes.mainPage.value)
     }
-  }, [])
+  }, [token])
   const { register, handleSubmit } = methods
   return (
     <section className={styles.container}>

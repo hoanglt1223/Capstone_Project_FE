@@ -5,32 +5,30 @@ import { useStore } from '../../stores/rootStore'
 import Button from '../Button'
 import Input from '../Input'
 import styles from './signUpForm.module.scss'
-import { useHistory } from 'react-router-dom'
-type SignUp = {
-  username: string
+import { observer } from 'mobx-react'
+export interface ISignUp {
+  email: string
   password: string
-  confirmPassword: string
+  // eslint-disable-next-line camelcase
+  password_confirmation: string
 }
 
 const SignUpForm = () => {
-  const history = useHistory()
   const { userStore } = useStore()
-  const methods = useForm<SignUp>({
+  const methods = useForm<ISignUp>({
     defaultValues: {},
     reValidateMode: 'onChange'
   })
-  const { register, handleSubmit, watch, errors } = methods
-  const onSubmit = async (userData: SignUp) => {
+  const { register, handleSubmit, errors } = methods
+  const onSubmit = async (userData: ISignUp) => {
     const formattedUser = {
-      username: userData.username,
-      password: userData.password
+      email: userData.email,
+      password: userData.password,
+      // eslint-disable-next-line camelcase
+      password_confirmation: userData.password_confirmation
     }
-    // const response = (await userStore.createUser(formattedUser)) || ''
-    // if (response) {
-    //   history.push('/main')
-    // }
+    await userStore.signUp(formattedUser)
   }
-  const watchPassword = watch('password')
   return (
     <section className={styles.container}>
       <FormProvider {...methods}>
@@ -39,27 +37,9 @@ const SignUpForm = () => {
             <h4>Sign Up</h4>
           </div>
           <FormGroup controlId="formBasicUsername">
-            <Label>Username</Label>
-            <Input
-              name="username"
-              type="text"
-              placeholder="Input your email"
-              innerRef={register({
-                required: {
-                  value: true,
-                  message: 'username is required'
-                },
-                minLength: {
-                  value: 6,
-                  message: 'length should be 6 or more'
-                },
-                pattern: {
-                  value: /[A-Za-z0-9]+/,
-                  message: 'invalid username'
-                }
-              })}
-            />
-            {errors.username && <span className={styles.error}>{errors.username.message}</span>}
+            <Label>Email</Label>
+            <Input name="email" type="email" placeholder="Input your email" innerRef={register} />
+            {errors.email && <span className={styles.error}>{errors.email.message}</span>}
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
             <Label>Password</Label>
@@ -83,7 +63,7 @@ const SignUpForm = () => {
           <FormGroup controlId="formBasicPassword">
             <Label>Confirm Password</Label>
             <Input
-              name="confirmPassword"
+              name="password_confirmation"
               type="password"
               placeholder="confirm your Password"
               innerRef={register({
@@ -94,13 +74,12 @@ const SignUpForm = () => {
                 minLength: {
                   value: 6,
                   message: 'confirm password should contain at least 6 characters'
-                },
-                validate: {
-                  confirmPassword: value => value === watchPassword || 'Your password and confirm password do not match'
                 }
               })}
             />
-            {errors.confirmPassword && <span className={styles.error}>{errors.confirmPassword.message}</span>}
+            {errors.password_confirmation && (
+              <span className={styles.error}>{errors.password_confirmation.message}</span>
+            )}
           </FormGroup>
           <div className={styles.buttonContainer}>
             <a href="/" style={{ alignSelf: 'center' }}>
@@ -118,4 +97,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default observer(SignUpForm)
