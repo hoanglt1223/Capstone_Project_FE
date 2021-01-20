@@ -9,6 +9,11 @@ const SearchBar = () => {
         <button className={styles.buttonScreen1}>Sign Up</button>
         <button className={styles.buttonScreen1}>Sign In</button>
       </div>
+      <div className={styles.containerLogout}>
+        <button onClick={() => localStorage.setItem('userToken', '')} className={styles.buttonLogout}>
+          Log out
+        </button>
+      </div>
     </div>
   )
 }
