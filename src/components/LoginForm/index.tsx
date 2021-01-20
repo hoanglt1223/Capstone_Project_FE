@@ -39,7 +39,7 @@ const LoginForm = () => {
           </div>
           <FormGroup controlId="formBasicEmail">
             <Label>Email:</Label>
-            <Input name="email" type="email" placeholder="Input your username" innerRef={register} />
+            <Input name="email" type="email" placeholder="Input your email" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
             <Label>Password:</Label>

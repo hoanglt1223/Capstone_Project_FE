@@ -43,7 +43,7 @@ const SignUpForm = () => {
             <Input
               name="username"
               type="text"
-              placeholder="Input your username"
+              placeholder="Input your email"
               innerRef={register({
                 required: {
                   value: true,
