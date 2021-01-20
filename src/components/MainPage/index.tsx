@@ -1,14 +1,25 @@
-import styles from './mainPage.module.scss'
-import SearchBar from './components/SearchBar'
-import ToolsBar from './components/ToolBars'
-import React from 'react'
-import CssProps from './components/CssProps'
-import GlobalProps from './components/GlobalProps'
-import Advertisement from './components/Advertisement'
-import PublishGroup from './components/PublishGroup'
+import { observer } from 'mobx-react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+import { getAccessToken } from '../../API'
+import routes from '../../routes'
 import ComponentsField from '../ComponentsField'
 import SignUpForm from '../SignUpForm'
+import Advertisement from './components/Advertisement'
+import CssProps from './components/CssProps'
+import GlobalProps from './components/GlobalProps'
+import PublishGroup from './components/PublishGroup'
+import SearchBar from './components/SearchBar'
+import ToolsBar from './components/ToolBars'
+import styles from './mainPage.module.scss'
 const MainPage = () => {
+  const history = useHistory()
+  const token = getAccessToken() || ''
+  useEffect(() => {
+    if (!token) {
+      history.push(routes.value)
+    }
+  }, [token])
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -45,4 +56,4 @@ const MainPage = () => {
   )
 }
 
-export default MainPage
+export default observer(MainPage)

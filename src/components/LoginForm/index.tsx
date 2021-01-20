@@ -24,11 +24,12 @@ const LoginForm = () => {
     defaultValues: {}
   })
   const history = useHistory()
+  const token = getAccessToken() || ''
   useEffect(() => {
-    if (getAccessToken()) {
+    if (token) {
       history.push(routes.mainPage.value)
     }
-  }, [])
+  }, [token])
   const { register, handleSubmit } = methods
   return (
     <section className={styles.container}>
@@ -39,7 +40,7 @@ const LoginForm = () => {
           </div>
           <FormGroup controlId="formBasicEmail">
             <Label>Email:</Label>
-            <Input name="email" type="email" placeholder="Input your username" innerRef={register} />
+            <Input name="email" type="email" placeholder="Input your email" innerRef={register} />
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
             <Label>Password:</Label>

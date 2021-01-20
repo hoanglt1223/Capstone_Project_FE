@@ -5,21 +5,30 @@ import { useStore } from '../../stores/rootStore'
 import Button from '../Button'
 import Input from '../Input'
 import styles from './signUpForm.module.scss'
-type SignUp = {
-  username: string
+import { observer } from 'mobx-react'
+export interface ISignUp {
+  email: string
   password: string
+  // eslint-disable-next-line camelcase
+  password_confirmation: string
 }
 
 const SignUpForm = () => {
   const { userStore } = useStore()
-  const onSubmit = async (data: SignUp) => {
-    const response = (await userStore.login(data)) || ''
-    console.log(response)
-  }
-  const methods = useForm<SignUp>({
-    defaultValues: {}
+  const methods = useForm<ISignUp>({
+    defaultValues: {},
+    reValidateMode: 'onChange'
   })
-  const { register, handleSubmit } = methods
+  const { register, handleSubmit, errors } = methods
+  const onSubmit = async (userData: ISignUp) => {
+    const formattedUser = {
+      email: userData.email,
+      password: userData.password,
+      // eslint-disable-next-line camelcase
+      password_confirmation: userData.password_confirmation
+    }
+    await userStore.signUp(formattedUser)
+  }
   return (
     <section className={styles.container}>
       <FormProvider {...methods}>
@@ -28,16 +37,49 @@ const SignUpForm = () => {
             <h4>Sign Up</h4>
           </div>
           <FormGroup controlId="formBasicUsername">
-            <Label>Username</Label>
-            <Input name="email" type="text" placeholder="Input your username" innerRef={register} />
+            <Label>Email</Label>
+            <Input name="email" type="email" placeholder="Input your email" innerRef={register} />
+            {errors.email && <span className={styles.error}>{errors.email.message}</span>}
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
             <Label>Password</Label>
-            <Input name="password" type="password" placeholder="Input your password" innerRef={register} />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Input your password"
+              innerRef={register({
+                required: {
+                  value: true,
+                  message: 'password is required'
+                },
+                minLength: {
+                  value: 6,
+                  message: 'password should contain at least 6 characters'
+                }
+              })}
+            />
+            {errors.password && <span className={styles.error}>{errors.password.message}</span>}
           </FormGroup>
           <FormGroup controlId="formBasicPassword">
-            <Label>Password</Label>
-            <Input name="re-password" type="password" placeholder="confirm your Password" innerRef={register} />
+            <Label>Confirm Password</Label>
+            <Input
+              name="password_confirmation"
+              type="password"
+              placeholder="confirm your Password"
+              innerRef={register({
+                required: {
+                  value: true,
+                  message: 'confirm password is required'
+                },
+                minLength: {
+                  value: 6,
+                  message: 'confirm password should contain at least 6 characters'
+                }
+              })}
+            />
+            {errors.password_confirmation && (
+              <span className={styles.error}>{errors.password_confirmation.message}</span>
+            )}
           </FormGroup>
           <div className={styles.buttonContainer}>
             <a href="/" style={{ alignSelf: 'center' }}>
@@ -55,4 +97,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default observer(SignUpForm)
