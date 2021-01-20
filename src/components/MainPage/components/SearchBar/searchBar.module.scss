@@ -1,7 +1,7 @@
 .container{
     border-style: none !important;
     display: flex;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
 }
 input{
     border-style: solid !important;
@@ -22,6 +22,7 @@ input{
     border-style: none !important;
     display: flex !important;
     justify-content: space-between !important;
+    padding-left: 200px;
     
     button{
         background-color:transparent !important;
@@ -36,4 +37,21 @@ input{
         color: #ffffff;
         
 }
+
+}
+.buttonLogout{
+    width: 80px !important;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #f75858;
+    color: #ffffff;
+    margin-right: 100px;
+}
+.containerLogout{
+    padding-left: 700px;
+    display:flex !important;
+    justify-content:flex-end !important;
 }
