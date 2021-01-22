@@ -1,4 +1,5 @@
-// eslint:disable:no-console
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+// tslint:disable:no-console
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
@@ -20,7 +21,6 @@ const isLocalhost = Boolean(
 export default function register() {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const publicUrl = new URL(process.env.PUBLIC_URL!, window.location.toString())
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
@@ -88,7 +88,6 @@ function checkValidServiceWorker(swUrl: string) {
   fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       if (response.status === 404 || response.headers.get('content-type')!.indexOf('javascript') === -1) {
         // No service worker found. Probably a different app. Reload the page.
         navigator.serviceWorker.ready.then(registration => {
