@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { IRootState } from './stores'
 import { Dispatch } from 'redux'
 import * as asyncActions from './stores/demo/async-actions'
@@ -61,13 +61,15 @@ function App(props: { addItem?: any; list?: any; loading?: any }) {
   const { list, loading } = props
   const [inputText, setInputText] = React.useState('')
   const demoList = useSelector(selectDemoList)
+  const dispatch = useDispatch()
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   }
 
   const onAddClick = () => {
-    props.addItem(inputText)
+    // props.addItem(inputText)
+    asyncActions.addItemAsync(dispatch, inputText)
     setInputText('')
   }
 
