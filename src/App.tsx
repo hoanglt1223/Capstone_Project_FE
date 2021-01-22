@@ -1,9 +1,10 @@
 import * as React from 'react'
+import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { IRootState } from './stores'
-import { Dispatch } from 'redux'
-import * as asyncActions from './stores/demo/async-actions'
 import { DemoActions } from './stores/demo/types'
+import * as asyncActions from './stores/demo/async-actions'
+import TestHook from './components/TestHook'
 
 const mapStateToProps = ({ demo }: IRootState) => {
   const { list, loading } = demo
@@ -32,13 +33,11 @@ class App extends React.Component<ReduxType, IState> {
 
   public onAddClick = () => {
     this.props.addItem(this.state.inputText)
-    console.log('TCL ~ file: App.tsx ~ line 51 ~ App ~ this.state.inputText', this.state.inputText)
     this.setState({ inputText: '' })
   }
 
   public render() {
     const { list, loading } = this.props
-    console.log('TCL ~ file: App.tsx ~ line 42 ~ App ~ render ~ list', list)
 
     return (
       <div style={{ margin: '20px' }}>
@@ -50,6 +49,7 @@ class App extends React.Component<ReduxType, IState> {
             <li key={l}>{l}</li>
           ))}
         </ul>
+        <TestHook />
       </div>
     )
   }

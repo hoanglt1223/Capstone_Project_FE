@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styles from './toolBar.module.scss'
-import Button from '../../../Button'
 const ToolsBar = () => {
   return (
     <div className={styles.container}>
