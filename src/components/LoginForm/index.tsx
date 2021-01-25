@@ -19,7 +19,7 @@ const LoginForm = () => {
   const user = useSelector((state: IRootState) => state.demo.user)
   console.log('TCL ~ file: index.tsx ~ line 20 ~ LoginForm ~ user', user)
   const dispatch = useDispatch()
-  const login = (input: IUser) => dispatch(loginRedux(input))
+  // const login = (input: IUser) => dispatch(loginRedux(input))
 
   const { userStore } = useStore()
   const onSubmit = async (data: IUser) => {
