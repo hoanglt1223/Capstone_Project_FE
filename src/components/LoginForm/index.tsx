@@ -1,35 +1,41 @@
-import React, { useEffect } from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
-import styles from './loginForm.module.scss'
+import { observer } from 'mobx-react'
+import React from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
 import { Form, FormGroup, Label } from 'reactstrap'
+import { IUser } from '../../interfaces/user'
+import { IRootState } from '../../stores'
+import { loginRedux } from '../../stores/demo/actions'
+import { useStore } from '../../stores/rootStore'
 import Button from '../Button'
 import Input from '../Input'
-import { observer } from 'mobx-react'
-import { getAccessToken } from '../../API'
-import { useHistory } from 'react-router-dom'
-import routes from '../../routes'
-import { useStore } from '../../stores/rootStore'
+import styles from './loginForm.module.scss'
 type Login = {
   email: string
   password: string
 }
 
 const LoginForm = () => {
+  const user = useSelector((state: IRootState) => state.demo.user)
+  console.log('TCL ~ file: index.tsx ~ line 20 ~ LoginForm ~ user', user)
+  const dispatch = useDispatch()
+  const login = (input: IUser) => dispatch(loginRedux(input))
+
   const { userStore } = useStore()
-  const onSubmit = async (data: Login) => {
-    const response = await userStore.login(data)
-    console.log(response)
+  const onSubmit = async (data: IUser) => {
+    const response = await dispatch(loginRedux(data))
+    // console.log(response)
   }
   const methods = useForm<Login>({
     defaultValues: {}
   })
-  const history = useHistory()
-  const token = getAccessToken() || ''
-  useEffect(() => {
-    if (token) {
-      history.push(routes.mainPage.value)
-    }
-  }, [token])
+  // const history = useHistory()
+  // const token = getAccessToken() || ''
+  // useEffect(() => {
+  //   if (token) {
+  //     history.push(routes.mainPage.value)
+  //   }
+  // }, [token])
   const { register, handleSubmit } = methods
   return (
     <section className={styles.container}>

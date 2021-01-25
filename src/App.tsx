@@ -5,6 +5,7 @@ import { IRootState } from './stores'
 import { DemoActions } from './stores/demo/types'
 import * as asyncActions from './stores/demo/async-actions'
 import TestHook from './components/TestHook'
+import LoginForm from './components/LoginForm'
 
 const mapStateToProps = ({ demo }: IRootState) => {
   const { list, loading } = demo
@@ -50,6 +51,7 @@ class App extends React.Component<ReduxType, IState> {
           ))}
         </ul>
         <TestHook />
+        <LoginForm />
       </div>
     )
   }
