@@ -21,9 +21,14 @@ function createWindow() {
   )
 
   if (process.env.NODE_ENV === 'development') {
-    const { default: installer, REACT_DEVELOPER_TOOLS, MOBX_DEVTOOLS } = require('electron-devtools-installer')
+    const {
+      default: installer,
+      REACT_DEVELOPER_TOOLS,
+      MOBX_DEVTOOLS,
+      REDUX_DEVTOOLS
+    } = require('electron-devtools-installer')
 
-    Promise.all([REACT_DEVELOPER_TOOLS, MOBX_DEVTOOLS].map(installer))
+    Promise.all([REACT_DEVELOPER_TOOLS, MOBX_DEVTOOLS, REDUX_DEVTOOLS].map(installer))
       .then(() => {
         console.log('Installed devtools successfully.')
       })

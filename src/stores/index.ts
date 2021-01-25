@@ -1,6 +1,8 @@
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, applyMiddleware } from 'redux'
 import { demoReducer } from './demo/reducer'
 import { IDemoState } from './demo/types'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
 export interface IRootState {
   demo: IDemoState
 }
@@ -8,7 +10,8 @@ export interface IRootState {
 const store = createStore<IRootState, any, any, any>(
   combineReducers({
     demo: demoReducer
-  })
+  }),
+  composeWithDevTools(applyMiddleware(thunk))
 )
-// store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log(store.getState()))
 export default store
